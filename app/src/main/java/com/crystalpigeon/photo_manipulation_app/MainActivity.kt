@@ -2,12 +2,10 @@ package com.crystalpigeon.photo_manipulation_app
 
 import android.app.Activity
 import android.content.Intent
-import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
 import com.theartofdev.edmodo.cropper.CropImage
-import java.io.File
 import java.io.IOException
 import java.io.InputStream
 import kotlinx.android.synthetic.main.activity_main.*
@@ -26,11 +24,11 @@ class MainActivity : AppCompatActivity() {
                 try {
                     contentResolver.openInputStream(result.uri)?.let {
                         inputStream = it
-                        result.uri?.let {
+                        result.uri?.let { uri ->
                             val fragment =
                                 nav_host_fragment.childFragmentManager.fragments[0] as PhotoFragment
 
-                            fragment.addPhoto(it)
+                            fragment.addPhoto(uri)
                         }
                     }
                 } catch (e: IOException) {

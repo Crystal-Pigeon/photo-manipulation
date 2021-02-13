@@ -5,7 +5,6 @@ import android.app.AlertDialog
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.os.Environment
@@ -31,7 +30,7 @@ class PhotoFragment : Fragment(R.layout.fragment_photo) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btn_change_photo.setOnClickListener {
-            val items = arrayOf<String>("Pick photo", "Take photo")
+            val items = arrayOf("Pick photo", "Take photo")
             AlertDialog.Builder(context)
                 .setTitle("Pick from:")
                 .setItems(items) { dialog: DialogInterface?, which: Int ->
