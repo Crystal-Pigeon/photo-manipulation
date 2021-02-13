@@ -9,14 +9,15 @@
         android:id="@+id/iv_photo"
         android:layout_width="150dp"
         android:layout_height="150dp"
+        android:scaleType="centerCrop"
         android:src="@drawable/ic_profile"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btn_change_photo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="contentDescription"
-        android:scaleType="centerCrop"
-        />
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="contentDescription" />
 
     <Button
         android:id="@+id/btn_change_photo"
@@ -24,8 +25,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/change_photo"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/iv_photo"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@id/iv_photo"
-        app:layout_constraintTop_toBottomOf="@id/iv_photo" />
+        app:layout_constraintTop_toBottomOf="@+id/iv_photo" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
